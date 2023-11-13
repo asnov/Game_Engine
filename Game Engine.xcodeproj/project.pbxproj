@@ -101,8 +101,8 @@
 			children = (
 				A708A66B2B027D3400F4BCAF /* GameView.swift */,
 				A708A6452B0276B700F4BCAF /* Main.storyboard */,
-				A708A66A2B02788D00F4BCAF /* Other files */,
 				A708A66D2B02976000F4BCAF /* MyShaders.metal */,
+				A708A66A2B02788D00F4BCAF /* Other files */,
 			);
 			path = "Game Engine";
 			sourceTree = "<group>";

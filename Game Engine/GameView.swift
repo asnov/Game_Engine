@@ -5,8 +5,12 @@
 //  Created by Alex on 13/11/2023.
 //
 
-import Cocoa
+import simd
 import MetalKit
+
+//public typealias _float2 = SIMD2＜Float＞
+//public typealias _float3 = SIMD3＜Float＞
+//public typealias _float4 = SIMD4＜Float＞
 
 class GameView: MTKView {
     
@@ -14,6 +18,13 @@ class GameView: MTKView {
 //    var commandQueue: MTLCommandQueue?
     private lazy var commandQueue = makeCommandQueue()
     private lazy var renderPipelineState = createRenderPilelineState()
+
+    let vertices: [SIMD3] = [
+        SIMD3(0, 1, 0),
+        SIMD3(-1, -1, 0),
+        SIMD3<Float>(1, -1, 0),
+    ]
+    private lazy var vertexBuffer = createBuffer()
     
     required init(coder: NSCoder) {
         super.init(coder: coder)
@@ -48,6 +59,10 @@ class GameView: MTKView {
         return renderPipelineState
     }
 
+    private func createBuffer() -> MTLBuffer? {
+        return device?.makeBuffer(bytes: vertices, length: MemoryLayout<SIMD3<Float>>.stride * vertices.count, options: [])
+    }
+    
     override func draw(_ dirtyRect: NSRect) {
         guard let drawable = self.currentDrawable, let renderPassDescriptor = self.currentRenderPassDescriptor else {
             return
@@ -57,6 +72,9 @@ class GameView: MTKView {
         let renderCommandEncoder = commandBuffer?.makeRenderCommandEncoder(descriptor: renderPassDescriptor)
         
         renderCommandEncoder?.setRenderPipelineState(renderPipelineState!)
+        
+        renderCommandEncoder?.setVertexBuffer(vertexBuffer, offset: 0, index: 0)
+        renderCommandEncoder?.drawPrimitives(type: .triangle, vertexStart: 0, vertexCount: vertices.count) 
 
         //Send info to rendercommandencoder
         renderCommandEncoder?.endEncoding()
