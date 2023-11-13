@@ -14,16 +14,17 @@ import MetalKit
 
 class GameView: MTKView {
     
+    struct Vertex {
+        var position: SIMD3<Float>
+        var color: SIMD4<Float>
+    }
+    
 //    private var commandQueue: MTLCommandQueue!
 //    var commandQueue: MTLCommandQueue?
     private lazy var commandQueue = makeCommandQueue()
     private lazy var renderPipelineState = createRenderPilelineState()
 
-    let vertices: [SIMD3] = [
-        SIMD3(0, 1, 0),
-        SIMD3(-1, -1, 0),
-        SIMD3<Float>(1, -1, 0),
-    ]
+    private lazy var vertices: [Vertex] = createVertices()
     private lazy var vertexBuffer = createBuffer()
     
     required init(coder: NSCoder) {
@@ -35,14 +36,22 @@ class GameView: MTKView {
         self.commandQueue = device?.makeCommandQueue()
     }
     
+    private func createVertices() -> [Vertex] {
+        [
+            Vertex(position: SIMD3<Float>( 0,  1, 0), color: SIMD4<Float>(1, 0, 0, 1)),
+            Vertex(position: SIMD3<Float>(-1, -1, 0), color: SIMD4<Float>(0, 1, 0, 1)),
+            Vertex(position: SIMD3<Float>( 1, -1, 0), color: SIMD4<Float>(0, 0, 1, 1)),
+        ]
+    }
+    
     private func makeCommandQueue() -> MTLCommandQueue? {
         return device?.makeCommandQueue()
     }
     
     func createRenderPilelineState() -> MTLRenderPipelineState? {
         let library = device?.makeDefaultLibrary()
-        let vertexFunction = library?.makeFunction(name: "basic_vertex_shader")
-        let fragmentFunction = library?.makeFunction(name: "basic_fragment_shader")
+        let vertexFunction = library?.makeFunction(name: "vertex_shader")
+        let fragmentFunction = library?.makeFunction(name: "fragment_shader")
         
         let renderPipelineDescriptor = MTLRenderPipelineDescriptor()
         renderPipelineDescriptor.colorAttachments[0].pixelFormat = .bgra8Unorm
@@ -60,7 +69,7 @@ class GameView: MTKView {
     }
 
     private func createBuffer() -> MTLBuffer? {
-        return device?.makeBuffer(bytes: vertices, length: MemoryLayout<SIMD3<Float>>.stride * vertices.count, options: [])
+        return device?.makeBuffer(bytes: vertices, length: MemoryLayout<Vertex>.stride * vertices.count, options: [])
     }
     
     override func draw(_ dirtyRect: NSRect) {
