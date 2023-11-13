@@ -8,13 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		A708A63D2B0276B500F4BCAF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A708A63C2B0276B500F4BCAF /* AppDelegate.swift */; };
-		A708A63F2B0276B500F4BCAF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A708A63E2B0276B500F4BCAF /* ViewController.swift */; };
 		A708A6422B0276B500F4BCAF /* Game_Engine.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A708A6402B0276B500F4BCAF /* Game_Engine.xcdatamodeld */; };
 		A708A6442B0276B700F4BCAF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A708A6432B0276B700F4BCAF /* Assets.xcassets */; };
 		A708A6472B0276B700F4BCAF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A708A6452B0276B700F4BCAF /* Main.storyboard */; };
 		A708A6522B0276B700F4BCAF /* Game_EngineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A708A6512B0276B700F4BCAF /* Game_EngineTests.swift */; };
 		A708A65C2B0276B700F4BCAF /* Game_EngineUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A708A65B2B0276B700F4BCAF /* Game_EngineUITests.swift */; };
 		A708A65E2B0276B700F4BCAF /* Game_EngineUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A708A65D2B0276B700F4BCAF /* Game_EngineUITestsLaunchTests.swift */; };
+		A708A66C2B027D3400F4BCAF /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A708A66B2B027D3400F4BCAF /* GameView.swift */; };
+		A708A66E2B02976000F4BCAF /* MyShaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = A708A66D2B02976000F4BCAF /* MyShaders.metal */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,7 +38,6 @@
 /* Begin PBXFileReference section */
 		A708A6392B0276B500F4BCAF /* Game Engine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Game Engine.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A708A63C2B0276B500F4BCAF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A708A63E2B0276B500F4BCAF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		A708A6412B0276B500F4BCAF /* Game_Engine.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Game_Engine.xcdatamodel; sourceTree = "<group>"; };
 		A708A6432B0276B700F4BCAF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A708A6462B0276B700F4BCAF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -47,6 +47,8 @@
 		A708A6572B0276B700F4BCAF /* Game EngineUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Game EngineUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A708A65B2B0276B700F4BCAF /* Game_EngineUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game_EngineUITests.swift; sourceTree = "<group>"; };
 		A708A65D2B0276B700F4BCAF /* Game_EngineUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game_EngineUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		A708A66B2B027D3400F4BCAF /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
+		A708A66D2B02976000F4BCAF /* MyShaders.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = MyShaders.metal; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,12 +99,10 @@
 		A708A63B2B0276B500F4BCAF /* Game Engine */ = {
 			isa = PBXGroup;
 			children = (
-				A708A63C2B0276B500F4BCAF /* AppDelegate.swift */,
-				A708A63E2B0276B500F4BCAF /* ViewController.swift */,
-				A708A6432B0276B700F4BCAF /* Assets.xcassets */,
+				A708A66B2B027D3400F4BCAF /* GameView.swift */,
 				A708A6452B0276B700F4BCAF /* Main.storyboard */,
-				A708A6482B0276B700F4BCAF /* Game_Engine.entitlements */,
-				A708A6402B0276B500F4BCAF /* Game_Engine.xcdatamodeld */,
+				A708A66A2B02788D00F4BCAF /* Other files */,
+				A708A66D2B02976000F4BCAF /* MyShaders.metal */,
 			);
 			path = "Game Engine";
 			sourceTree = "<group>";
@@ -122,6 +122,17 @@
 				A708A65D2B0276B700F4BCAF /* Game_EngineUITestsLaunchTests.swift */,
 			);
 			path = "Game EngineUITests";
+			sourceTree = "<group>";
+		};
+		A708A66A2B02788D00F4BCAF /* Other files */ = {
+			isa = PBXGroup;
+			children = (
+				A708A63C2B0276B500F4BCAF /* AppDelegate.swift */,
+				A708A6432B0276B700F4BCAF /* Assets.xcassets */,
+				A708A6482B0276B700F4BCAF /* Game_Engine.entitlements */,
+				A708A6402B0276B500F4BCAF /* Game_Engine.xcdatamodeld */,
+			);
+			path = "Other files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -254,8 +265,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A708A63F2B0276B500F4BCAF /* ViewController.swift in Sources */,
+				A708A66E2B02976000F4BCAF /* MyShaders.metal in Sources */,
 				A708A63D2B0276B500F4BCAF /* AppDelegate.swift in Sources */,
+				A708A66C2B027D3400F4BCAF /* GameView.swift in Sources */,
 				A708A6422B0276B500F4BCAF /* Game_Engine.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -427,7 +439,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = "Game Engine/Game_Engine.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "Game Engine/Other files/Game_Engine.entitlements";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
@@ -454,7 +467,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = "Game Engine/Game_Engine.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "Game Engine/Other files/Game_Engine.entitlements";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
