@@ -14,7 +14,7 @@ import MetalKit
 
 class GameView: MTKView {
     
-    struct Vertex {
+    struct Vertex: sizable {
         var position: SIMD3<Float>
         var color: SIMD4<Float>
     }
@@ -50,13 +50,28 @@ class GameView: MTKView {
     
     func createRenderPilelineState() -> MTLRenderPipelineState? {
         let library = device?.makeDefaultLibrary()
-        let vertexFunction = library?.makeFunction(name: "vertex_shader")
+        let vertexFunction = library?.makeFunction(name: "vertex_shader2")
         let fragmentFunction = library?.makeFunction(name: "fragment_shader")
+        
+        let vertexDescriptor = MTLVertexDescriptor()
+        
+        // Position
+        vertexDescriptor.attributes[0].format = .float3
+        vertexDescriptor.attributes[0].bufferIndex = 0
+        vertexDescriptor.attributes[0].offset = 0
+        
+        // Color
+        vertexDescriptor.attributes[1].format = .float4
+        vertexDescriptor.attributes[1].bufferIndex = 0
+        vertexDescriptor.attributes[1].offset = SIMD3<Float>.size
+        
+        vertexDescriptor.layouts[0].stride = Vertex.stride
         
         let renderPipelineDescriptor = MTLRenderPipelineDescriptor()
         renderPipelineDescriptor.colorAttachments[0].pixelFormat = .bgra8Unorm
         renderPipelineDescriptor.vertexFunction = vertexFunction
         renderPipelineDescriptor.fragmentFunction = fragmentFunction
+        renderPipelineDescriptor.vertexDescriptor = vertexDescriptor
         
         let renderPipelineState: MTLRenderPipelineState?
         do {
@@ -69,7 +84,7 @@ class GameView: MTKView {
     }
 
     private func createBuffer() -> MTLBuffer? {
-        return device?.makeBuffer(bytes: vertices, length: MemoryLayout<Vertex>.stride * vertices.count, options: [])
+        return device?.makeBuffer(bytes: vertices, length: Vertex.stride(vertices.count), options: [])
     }
     
     override func draw(_ dirtyRect: NSRect) {
