@@ -37,14 +37,16 @@ protocol RenderPipelineState {
 public struct Basic_RenderPipelineState: RenderPipelineState {
     var name: String = "Basic Render Pipeline State"
     
-    var renderPipelineState: MTLRenderPipelineState {
-        var renderPipelineState: MTLRenderPipelineState!
+    var renderPipelineState: MTLRenderPipelineState
+    init() {
+        let renderPipelineState: MTLRenderPipelineState!
         do {
             renderPipelineState = try Engine.Device
                 .makeRenderPipelineState(descriptor: RenderPipelineDescriptorLibrary.Descriptor(.Basic))
         } catch let error as NSError {
             print("ERROR::CREATE::RENDER_PIPELINE_STATE::__\(name)__::\(error)")
+            renderPipelineState = nil   // FIXME: potential crash
         }
-        return renderPipelineState
+        self.renderPipelineState = renderPipelineState
     }
 }

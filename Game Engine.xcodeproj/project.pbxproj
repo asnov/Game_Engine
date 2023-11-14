@@ -23,6 +23,8 @@
 		A794C4F62B03B063008A4338 /* VertexDescriptorLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = A794C4F52B03B063008A4338 /* VertexDescriptorLibrary.swift */; };
 		A794C4F82B03B41D008A4338 /* RenderPipelineDescriptorLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = A794C4F72B03B41D008A4338 /* RenderPipelineDescriptorLibrary.swift */; };
 		A794C4FA2B03B817008A4338 /* RenderPipelineStateLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = A794C4F92B03B817008A4338 /* RenderPipelineStateLibrary.swift */; };
+		A794C4FD2B03CB40008A4338 /* GameObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = A794C4FC2B03CB40008A4338 /* GameObject.swift */; };
+		A794C4FF2B03CF15008A4338 /* Renderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A794C4FE2B03CF15008A4338 /* Renderer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +65,8 @@
 		A794C4F52B03B063008A4338 /* VertexDescriptorLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VertexDescriptorLibrary.swift; sourceTree = "<group>"; };
 		A794C4F72B03B41D008A4338 /* RenderPipelineDescriptorLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RenderPipelineDescriptorLibrary.swift; sourceTree = "<group>"; };
 		A794C4F92B03B817008A4338 /* RenderPipelineStateLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RenderPipelineStateLibrary.swift; sourceTree = "<group>"; };
+		A794C4FC2B03CB40008A4338 /* GameObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameObject.swift; sourceTree = "<group>"; };
+		A794C4FE2B03CF15008A4338 /* Renderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Renderer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +120,7 @@
 				A794C4EB2B0339B1008A4338 /* Core */,
 				A794C4EC2B0339C5008A4338 /* Libraries */,
 				A794C4ED2B0339E7008A4338 /* Shaders */,
+				A794C4FB2B03CA3B008A4338 /* Game Shizz */,
 				A794C4EE2B033A25008A4338 /* Display */,
 				A708A66A2B02788D00F4BCAF /* Other files */,
 			);
@@ -182,10 +187,19 @@
 		A794C4EE2B033A25008A4338 /* Display */ = {
 			isa = PBXGroup;
 			children = (
+				A794C4FE2B03CF15008A4338 /* Renderer.swift */,
 				A708A66B2B027D3400F4BCAF /* GameView.swift */,
 				A708A6452B0276B700F4BCAF /* Main.storyboard */,
 			);
 			path = Display;
+			sourceTree = "<group>";
+		};
+		A794C4FB2B03CA3B008A4338 /* Game Shizz */ = {
+			isa = PBXGroup;
+			children = (
+				A794C4FC2B03CB40008A4338 /* GameObject.swift */,
+			);
+			path = "Game Shizz";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -323,9 +337,11 @@
 				A794C4F82B03B41D008A4338 /* RenderPipelineDescriptorLibrary.swift in Sources */,
 				A794C4F22B03A09F008A4338 /* Preferences.swift in Sources */,
 				A794C4F42B03A4D7008A4338 /* ShaderLibrary.swift in Sources */,
+				A794C4FF2B03CF15008A4338 /* Renderer.swift in Sources */,
 				A794C4F02B039CDA008A4338 /* Engine.swift in Sources */,
 				A708A63D2B0276B500F4BCAF /* AppDelegate.swift in Sources */,
 				A708A66C2B027D3400F4BCAF /* GameView.swift in Sources */,
+				A794C4FD2B03CB40008A4338 /* GameObject.swift in Sources */,
 				A794C4EA2B02D594008A4338 /* Types.swift in Sources */,
 				A708A6422B0276B500F4BCAF /* Game_Engine.xcdatamodeld in Sources */,
 				A794C4FA2B03B817008A4338 /* RenderPipelineStateLibrary.swift in Sources */,

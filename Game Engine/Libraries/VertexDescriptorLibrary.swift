@@ -35,9 +35,10 @@ protocol VertexDescriptor {
 public struct Basic_VertexDescriptor: VertexDescriptor {
     var name = "Basic Vertex Descriptor"
     
-    var vertexDescriptor: MTLVertexDescriptor {
-        let vertexDescriptor = MTLVertexDescriptor()
-        
+    var vertexDescriptor: MTLVertexDescriptor 
+    init() {
+        vertexDescriptor = MTLVertexDescriptor()
+ 
         // Position
         vertexDescriptor.attributes[0].format = .float3
         vertexDescriptor.attributes[0].bufferIndex = 0
@@ -48,8 +49,6 @@ public struct Basic_VertexDescriptor: VertexDescriptor {
         vertexDescriptor.attributes[1].bufferIndex = 0
         vertexDescriptor.attributes[1].offset = SIMD3<Float>.size
         
-        vertexDescriptor.layouts[0].stride = GameView.Vertex.stride // TODO: Check it
-        
-        return vertexDescriptor
+        vertexDescriptor.layouts[0].stride = Vertex.stride // TODO: Check it
     }
 }

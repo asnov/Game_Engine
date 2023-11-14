@@ -7,6 +7,10 @@
 
 import simd
 
+//public typealias _float2 = SIMD2＜Float＞
+//public typealias _float3 = SIMD3＜Float＞
+//public typealias _float4 = SIMD4＜Float＞
+
 protocol sizable { }
 
 extension sizable {
@@ -28,3 +32,8 @@ extension sizable {
 }
 
 extension SIMD3: sizable { }
+
+struct Vertex: sizable {
+    var position: SIMD3<Float>
+    var color: SIMD4<Float>
+}
