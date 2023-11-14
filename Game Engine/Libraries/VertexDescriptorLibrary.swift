@@ -14,7 +14,7 @@ enum VertexDescriptorType {
 class VertexDescriptorLibrary {
     private static var vertexDescriptors: [VertexDescriptorType: VertexDescriptor] = [:]
     
-    public static func initialize() {
+    public static func Initialize() {
         createDefaultVertexDescriptors()
     }
     

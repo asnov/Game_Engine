@@ -19,12 +19,11 @@ class Engine {
 //        var commandQueue: MTLCommandQueue?
         self.CommandQueue = device?.makeCommandQueue()
         
-        ShaderLibrary.initialize()
+        ShaderLibrary.Initialize()
+        VertexDescriptorLibrary.Initialize()
+        RenderPipelineDescriptorLibrary.Initialize()
+        RenderPipelineStateLibrary.Initialize()
         
-        VertexDescriptorLibrary.initialize()
-        
-        RenderPipelineDescriptorLibrary.initialize()
-        
-        RenderPipelineStateLibrary.initialize()
+        MeshLibrary.Initialize()
     }
 }

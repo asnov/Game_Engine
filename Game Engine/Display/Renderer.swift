@@ -9,7 +9,8 @@ import MetalKit
 
 class Renderer: NSObject {
     
-    var gameObject = GameObject()
+    var player = Player()
+    
 }
 
 extension Renderer: MTKViewDelegate {
@@ -25,7 +26,7 @@ extension Renderer: MTKViewDelegate {
         let commandBuffer = Engine.CommandQueue.makeCommandBuffer()
         let renderCommandEncoder = commandBuffer?.makeRenderCommandEncoder(descriptor: renderPassDescriptor)
         
-        gameObject.render(renderCommandEncoder: renderCommandEncoder!)
+        player.render(renderCommandEncoder: renderCommandEncoder!)
 
         //Send info to rendercommandencoder
         renderCommandEncoder?.endEncoding()
