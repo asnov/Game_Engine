@@ -51,6 +51,8 @@ fragment half4 basic_fragment_shader() {
 fragment half4 fragment_shader(RasterizerData rd [[ stage_in ]]) {
 //    float4 position = rd.position;
     float4 color = rd.color;
+//    float4 color = float4(0,1,0,1); // Red Channel
+//    float4 color = float4(color.r, color.g, color.b, color.a);
     
     return half4(color.r, color.g, color.b, color.a);
 //    return half4(color.g, color.b, color.a, color.r);
