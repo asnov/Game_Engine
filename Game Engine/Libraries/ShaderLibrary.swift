@@ -16,7 +16,6 @@ enum FragmentShaderTypes {
 }
 
 class ShaderLibrary {
-    
     public static var DefaultLibrary: MTLLibrary!
     
     private static var vertexShaders: [VertexShaderTypes:Shader] = [:]
@@ -33,11 +32,11 @@ class ShaderLibrary {
     }
     
     public static func Vertex(_ vertexShaderType: VertexShaderTypes) -> MTLFunction {
-        return vertexShaders[vertexShaderType]!.function
+        return vertexShaders[vertexShaderType, default: Basic_VertexShader()].function
     }
     
     public static func Fragment(_ fragmentShaderType: FragmentShaderTypes) -> MTLFunction {
-        return fragmentShaders[fragmentShaderType]!.function
+        return fragmentShaders[fragmentShaderType, default: Basic_FragmentShader()].function
     }
 }
 
