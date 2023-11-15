@@ -34,10 +34,12 @@ vertex RasterizerData vertex_shader(const device VertexIn *vertices [[ buffer(0)
     return rd;
 }
 
-vertex RasterizerData vertex_shader2(const VertexIn vIn [[ stage_in ]]) {
+vertex RasterizerData vertex_shader2(const VertexIn vIn [[ stage_in ]],
+                                     constant float &deltaPosition [[ buffer(1) ]]) {
     RasterizerData rd;
     
     rd.position = float4(vIn.position, 1);
+    rd.position.x += deltaPosition;
     rd.color = vIn.color;
     
     return rd;

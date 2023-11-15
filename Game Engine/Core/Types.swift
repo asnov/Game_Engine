@@ -31,6 +31,7 @@ extension sizable {
     }
 }
 
+extension Float: sizable { }
 extension SIMD3: sizable { }
 
 struct Vertex: sizable {
