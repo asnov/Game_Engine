@@ -24,6 +24,8 @@ class GameObject: Node {
         time += deltaTime
 //        deltaPosition = cos(time)
         self.position.x = cos(time)
+        self.scale =  SIMD3<Float>(repeating: cos(time))
+
         updateModelConstants()
     }
     
