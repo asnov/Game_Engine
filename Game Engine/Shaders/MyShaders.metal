@@ -46,6 +46,22 @@ vertex RasterizerData vertex_shader2(const VertexIn vIn [[ stage_in ]],
 }
 
 
+struct ModelConstants {
+    float4x4 modelMatrix;
+};
+
+vertex RasterizerData vertex_shader3(const VertexIn vIn [[ stage_in ]],
+                                     constant ModelConstants &modelConstants [[ buffer(1) ]]) {
+    RasterizerData rd;
+    
+//    rd.position = float4(vIn.position, 1);
+    rd.position = modelConstants.modelMatrix * float4(vIn.position, 1); // The order is important: https://youtu.be/hvA0tTyH7JA?t=1611
+    rd.color = vIn.color;
+    
+    return rd;
+}
+
+
 fragment half4 basic_fragment_shader() {
     return half4(1);
 }

@@ -49,7 +49,7 @@ protocol Shader {
 public struct Basic_VertexShader: Shader {
     public var name: String = "Basic Vertex Shader v2"
     //    public var functionName: String = "basic_vertex_shader"
-    public var functionName: String = "vertex_shader2"
+    public var functionName: String = "vertex_shader3"
     public var function: MTLFunction 
     init() {
         function = ShaderLibrary.DefaultLibrary.makeFunction(name: functionName)!
