@@ -22,8 +22,23 @@ class Node {
         modelMatrix.scale(axis: scale)
         return modelMatrix
     }
+    
+    var children: [Node] = []
+    
+    func addChild(_ child: Node) {
+        children.append(child)
+    }
+
+    func update(deltaTime: Float) {
+        for child in children {
+            child.update(deltaTime: deltaTime)
+        }
+    }
 
     func render(renderCommandEncoder: MTLRenderCommandEncoder) {
+        for child in children {
+            child.render(renderCommandEncoder: renderCommandEncoder)
+        }
         
         if let renderable = self as? Renderable {
             renderable.doRender(renderCommandEncoder)

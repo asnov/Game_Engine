@@ -20,7 +20,7 @@ class GameObject: Node {
     }
 
     var time: Float = 0
-    func update(deltaTime: Float ) {
+    override func update(deltaTime: Float) {
         time += deltaTime
 //        deltaPosition = cos(time)
         self.position.x = cos(time) * 0.5
