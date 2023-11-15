@@ -23,9 +23,10 @@ class GameObject: Node {
     func update(deltaTime: Float ) {
         time += deltaTime
 //        deltaPosition = cos(time)
-        self.position.x = cos(time)
-        self.scale =  SIMD3<Float>(repeating: cos(time))
-
+        self.position.x = cos(time) * 0.5
+        self.position.y = sin(time) * 0.5
+        self.scale =  SIMD3<Float>(repeating: cos(time) * 0.5)
+        self.rotation.z = cos(time)
         updateModelConstants()
     }
     
