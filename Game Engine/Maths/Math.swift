@@ -70,7 +70,7 @@ extension matrix_float4x4 {
         
         let r1c2: Float = y * x * mc - z * s
         let r2c2: Float = y * y * mc + c
-        let r3c2: Float = y * z * mc - x * s
+        let r3c2: Float = y * z * mc + x * s
         let r4c2: Float = 0.0
         
         let r1c3: Float = z * x * mc + y * s
