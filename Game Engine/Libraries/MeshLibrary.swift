@@ -12,6 +12,7 @@ enum MeshTypes {
     case HighTriangleCustom
     case QuadCustom
     case CubeCustom
+    case CubeConTriangle
 }
 
 class MeshLibrary {
@@ -27,6 +28,7 @@ class MeshLibrary {
         meshes.updateValue(HighTriangleCustomMesh(), forKey: .HighTriangleCustom)
         meshes.updateValue(QuadCustomMesh(), forKey: .QuadCustom)
         meshes.updateValue(CubeCustomMesh(), forKey: .CubeCustom)
+        meshes.updateValue(CubeConTriangleMesh(), forKey: .CubeConTriangle)
     }
     
     public static func Mesh(_ meshType: MeshTypes) -> Mesh {
@@ -142,6 +144,38 @@ class CubeCustomMesh: CustomMesh {
             Vertex(position: SIMD3<Float>( 1.0, 1.0, 1.0), color: SIMD4<Float>(1.0, 0.0, 0.0, 1.0)),
             Vertex(position: SIMD3<Float>(-1.0, 1.0, 1.0), color: SIMD4<Float>(0.9, 0.0, 0.0, 1.0)),
             Vertex(position: SIMD3<Float>( 1.0,-1.0, 1.0), color: SIMD4<Float>(0.9, 0.0, 0.0, 1.0))
+        ]
+    }
+}
+
+class CubeConTriangleMesh: CubeCustomMesh {
+    
+    override func createVertices() -> [Vertex] {
+        super.createVertices() + [
+            // Left - green
+            Vertex(position: SIMD3<Float>(-1.001, 0.0, 0.5), color: SIMD4<Float>(0.0, 1.0, 0.0, 1.0)),
+            Vertex(position: SIMD3<Float>(-1.001,-0.5,-0.5), color: SIMD4<Float>(0.0, 1.0, 0.0, 1.0)),
+            Vertex(position: SIMD3<Float>(-1.001, 0.5,-0.5), color: SIMD4<Float>(0.0, 1.0, 0.0, 1.0)),
+            // Right - blue
+            Vertex(position: SIMD3<Float>( 1.001, 0.0, 0.5), color: SIMD4<Float>(0.0, 0.0, 1.0, 1.0)),
+            Vertex(position: SIMD3<Float>( 1.001,-0.5,-0.5), color: SIMD4<Float>(0.0, 0.0, 1.0, 1.0)),
+            Vertex(position: SIMD3<Float>( 1.001, 0.5,-0.5), color: SIMD4<Float>(0.0, 0.0, 1.0, 1.0)),
+            // Top - green
+            Vertex(position: SIMD3<Float>( 0.0, 1.001, 0.5), color: SIMD4<Float>(0.0, 1.0, 0.0, 1.0)),
+            Vertex(position: SIMD3<Float>(-0.5, 1.001,-0.5), color: SIMD4<Float>(0.0, 1.0, 0.0, 1.0)),
+            Vertex(position: SIMD3<Float>( 0.5, 1.001,-0.5), color: SIMD4<Float>(0.0, 1.0, 0.0, 1.0)),
+            // Bottom - dark
+            Vertex(position: SIMD3<Float>( 0.0,-1.001, 0.5), color: SIMD4<Float>(0.1, 0.1, 0.1, 1.0)),
+            Vertex(position: SIMD3<Float>(-0.5,-1.001,-0.5), color: SIMD4<Float>(0.1, 0.1, 0.1, 1.0)),
+            Vertex(position: SIMD3<Float>( 0.5,-1.001,-0.5), color: SIMD4<Float>(0.1, 0.1, 0.1, 1.0)),
+            // Back - yellow
+            Vertex(position: SIMD3<Float>( 0.0, 0.5, -1.001), color: SIMD4<Float>(1.0, 1.0, 0.0, 1.0)),
+            Vertex(position: SIMD3<Float>(-0.5,-0.5, -1.001), color: SIMD4<Float>(1.0, 1.0, 0.0, 1.0)),
+            Vertex(position: SIMD3<Float>( 0.5,-0.5, -1.001), color: SIMD4<Float>(1.0, 1.0, 0.0, 1.0)),
+            // Front - yellow
+            Vertex(position: SIMD3<Float>( 0.0, 0.5, 1.001), color: SIMD4<Float>(1.0, 1.0, 0.0, 1.0)),
+            Vertex(position: SIMD3<Float>(-0.5,-0.5, 1.001), color: SIMD4<Float>(1.0, 1.0, 0.0, 1.0)),
+            Vertex(position: SIMD3<Float>( 0.5,-0.5, 1.001), color: SIMD4<Float>(1.0, 1.0, 0.0, 1.0)),
         ]
     }
 }

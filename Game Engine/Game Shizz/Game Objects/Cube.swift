@@ -10,6 +10,6 @@ import MetalKit
 class Cube: GameObject {
  
     init() {
-        super.init(meshType: .CubeCustom)
+        super.init(meshType: .CubeConTriangle)
     }
 }
