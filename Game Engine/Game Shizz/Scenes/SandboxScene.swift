@@ -8,8 +8,11 @@
 import MetalKit
 
 class SandboxScene: Scene {
-    
+    let debugCamera: Camera = DebugCamera()
+
     override func buildScene() {
+        addCamera(debugCamera)
+
         let ball = Ball()
         ball.position.x = 0
         ball.position.y = 0
@@ -19,11 +22,11 @@ class SandboxScene: Scene {
         let count: Int = 2
         for x in -count..<count {
             for y in -count..<count {
-                let player = Player()
-                player.position.x = (Float(x) + 0.5) / Float(count)
-                player.position.y = (Float(y) + 0.5) / Float(count)
-                player.scale = SIMD3<Float>(repeating: 0.1)
-                addChild(player)
+                let pointer = Pointer(camera: debugCamera)
+                pointer.position.x = (Float(x) + 0.5) / Float(count)
+                pointer.position.y = (Float(y) + 0.5) / Float(count)
+                pointer.scale = SIMD3<Float>(repeating: 0.1)
+                addChild(pointer)
             }
         }
     }
