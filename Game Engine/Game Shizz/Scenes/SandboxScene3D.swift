@@ -18,6 +18,7 @@ class SandboxScene3D: Scene {
         debugCamera.position.z = 1
         
         cube.scale = SIMD3<Float>(repeating: 0.2)
+//        cube.setColor(SIMD4<Float>(0.7, 0.1, 0.3, 1.0))
         addChild(cube)
     }
     

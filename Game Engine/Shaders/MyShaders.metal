@@ -55,6 +55,11 @@ struct SceneConstants {
     float4x4 projectionMatrix;
 };
 
+struct Material {
+    float4 color;
+    bool useMaterialColor;
+};
+
 vertex RasterizerData vertex_shader3(const VertexIn vIn [[ stage_in ]],
                                      constant SceneConstants &sceneConstants [[ buffer(1) ]],
                                      constant ModelConstants &modelConstants [[ buffer(2) ]]) {
@@ -73,9 +78,10 @@ fragment half4 basic_fragment_shader() {
     return half4(1);
 }
 
-fragment half4 fragment_shader(RasterizerData rd [[ stage_in ]]) {
+fragment half4 fragment_shader(RasterizerData rd [[ stage_in ]],
+                               constant Material &material [[ buffer(1) ]]) {
 //    float4 position = rd.position;
-    float4 color = rd.color;
+    float4 color = material.useMaterialColor ? material.color : rd.color;
 //    float4 color = float4(0,1,0,1); // Red Channel
 //    float4 color = float4(color.r, color.g, color.b, color.a);
     
