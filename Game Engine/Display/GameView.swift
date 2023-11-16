@@ -19,6 +19,7 @@ class GameView: MTKView {
         Engine.Ignite(device: device)
         self.clearColor = Preferences.ClearColor
         self.colorPixelFormat = Preferences.MainPixelFormat
+        self.depthStencilPixelFormat = Preferences.MainDepthPixelFormat
         self.delegate = renderer
     }
 }
@@ -87,7 +88,7 @@ extension GameView {
     
     private func setMousePositionChanged(event: NSEvent){
         let overallLocation = SIMD2<Float>(Float(event.locationInWindow.x),
-                                     Float(event.locationInWindow.y))
+                                           Float(event.locationInWindow.y))
         let deltaChange = SIMD2<Float>(Float(event.deltaX),
                                  Float(event.deltaY))
         Mouse.SetMousePositionChange(overallPosition: overallLocation,

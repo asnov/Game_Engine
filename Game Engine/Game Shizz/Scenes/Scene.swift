@@ -27,7 +27,8 @@ class Scene: Node {
     }
     
     private func updateSceneConstants() {
-        sceneConstants.ViewMatrix = cameraManager.currentCamera.viewMatrix
+        sceneConstants.viewMatrix = cameraManager.currentCamera.viewMatrix
+        sceneConstants.projectionMatrix = cameraManager.currentCamera.projectionMatrix
     }
     
     private func updateCameras(deltaTime: Float) {

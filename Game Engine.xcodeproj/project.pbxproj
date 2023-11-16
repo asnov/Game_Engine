@@ -40,6 +40,9 @@
 		A7BD275B2B064AD20032AD80 /* Camera.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BD275A2B064AD20032AD80 /* Camera.swift */; };
 		A7BD275D2B064CC90032AD80 /* DebugCamera.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BD275C2B064CC90032AD80 /* DebugCamera.swift */; };
 		A7BD275F2B0653100032AD80 /* CameraManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BD275E2B0653100032AD80 /* CameraManager.swift */; };
+		A7BD27612B0676670032AD80 /* Cube.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BD27602B0676670032AD80 /* Cube.swift */; };
+		A7BD27632B0679710032AD80 /* SandboxScene3D.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BD27622B0679710032AD80 /* SandboxScene3D.swift */; };
+		A7BD27652B067C9D0032AD80 /* DepthStencilStateLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BD27642B067C9D0032AD80 /* DepthStencilStateLibrary.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,6 +100,9 @@
 		A7BD275A2B064AD20032AD80 /* Camera.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Camera.swift; sourceTree = "<group>"; };
 		A7BD275C2B064CC90032AD80 /* DebugCamera.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugCamera.swift; sourceTree = "<group>"; };
 		A7BD275E2B0653100032AD80 /* CameraManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraManager.swift; sourceTree = "<group>"; };
+		A7BD27602B0676670032AD80 /* Cube.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cube.swift; sourceTree = "<group>"; };
+		A7BD27622B0679710032AD80 /* SandboxScene3D.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SandboxScene3D.swift; sourceTree = "<group>"; };
+		A7BD27642B067C9D0032AD80 /* DepthStencilStateLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepthStencilStateLibrary.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -192,6 +198,7 @@
 			children = (
 				A753D01C2B0545080067B6B3 /* Scene.swift */,
 				A753D01E2B0546E90067B6B3 /* SandboxScene.swift */,
+				A7BD27622B0679710032AD80 /* SandboxScene3D.swift */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -224,6 +231,7 @@
 				A794C4F72B03B41D008A4338 /* RenderPipelineDescriptorLibrary.swift */,
 				A794C4F92B03B817008A4338 /* RenderPipelineStateLibrary.swift */,
 				A794C5002B03FBC8008A4338 /* MeshLibrary.swift */,
+				A7BD27642B067C9D0032AD80 /* DepthStencilStateLibrary.swift */,
 			);
 			path = Libraries;
 			sourceTree = "<group>";
@@ -272,6 +280,7 @@
 				A794C4FC2B03CB40008A4338 /* GameObject.swift */,
 				A794C5022B040688008A4338 /* Pointer.swift */,
 				A7BD27572B0594DF0032AD80 /* Ball.swift */,
+				A7BD27602B0676670032AD80 /* Cube.swift */,
 			);
 			path = "Game Objects";
 			sourceTree = "<group>";
@@ -434,8 +443,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				A794C5082B0409A5008A4338 /* Renderable.swift in Sources */,
+				A7BD27632B0679710032AD80 /* SandboxScene3D.swift in Sources */,
 				A794C4F62B03B063008A4338 /* VertexDescriptorLibrary.swift in Sources */,
 				A708A66E2B02976000F4BCAF /* MyShaders.metal in Sources */,
+				A7BD27612B0676670032AD80 /* Cube.swift in Sources */,
 				A753D01D2B0545080067B6B3 /* Scene.swift in Sources */,
 				A794C4F82B03B41D008A4338 /* RenderPipelineDescriptorLibrary.swift in Sources */,
 				A7BD275D2B064CC90032AD80 /* DebugCamera.swift in Sources */,
@@ -445,6 +456,7 @@
 				A7BD27562B056E7F0032AD80 /* Mouse.swift in Sources */,
 				A794C4F42B03A4D7008A4338 /* ShaderLibrary.swift in Sources */,
 				A7BD275B2B064AD20032AD80 /* Camera.swift in Sources */,
+				A7BD27652B067C9D0032AD80 /* DepthStencilStateLibrary.swift in Sources */,
 				A794C4FF2B03CF15008A4338 /* Renderer.swift in Sources */,
 				A794C4F02B039CDA008A4338 /* Engine.swift in Sources */,
 				A753D0222B0549740067B6B3 /* SceneManager.swift in Sources */,
