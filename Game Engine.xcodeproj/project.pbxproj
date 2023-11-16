@@ -35,6 +35,8 @@
 		A794C50C2B044BEB008A4338 /* Math.swift in Sources */ = {isa = PBXBuildFile; fileRef = A794C50B2B044BEB008A4338 /* Math.swift */; };
 		A7BD27522B05644C0032AD80 /* Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BD27512B05644C0032AD80 /* Keyboard.swift */; };
 		A7BD27542B0567B60032AD80 /* Keycodes.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BD27532B0567B60032AD80 /* Keycodes.swift */; };
+		A7BD27562B056E7F0032AD80 /* Mouse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BD27552B056E7F0032AD80 /* Mouse.swift */; };
+		A7BD27582B0594DF0032AD80 /* Ball.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BD27572B0594DF0032AD80 /* Ball.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +89,8 @@
 		A794C50B2B044BEB008A4338 /* Math.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Math.swift; sourceTree = "<group>"; };
 		A7BD27512B05644C0032AD80 /* Keyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keyboard.swift; sourceTree = "<group>"; };
 		A7BD27532B0567B60032AD80 /* Keycodes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keycodes.swift; sourceTree = "<group>"; };
+		A7BD27552B056E7F0032AD80 /* Mouse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mouse.swift; sourceTree = "<group>"; };
+		A7BD27572B0594DF0032AD80 /* Ball.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ball.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -259,6 +263,7 @@
 			children = (
 				A794C4FC2B03CB40008A4338 /* GameObject.swift */,
 				A794C5022B040688008A4338 /* Player.swift */,
+				A7BD27572B0594DF0032AD80 /* Ball.swift */,
 			);
 			path = "Game Objects";
 			sourceTree = "<group>";
@@ -276,6 +281,7 @@
 			children = (
 				A7BD27512B05644C0032AD80 /* Keyboard.swift */,
 				A7BD27532B0567B60032AD80 /* Keycodes.swift */,
+				A7BD27552B056E7F0032AD80 /* Mouse.swift */,
 			);
 			path = Input;
 			sourceTree = "<group>";
@@ -417,6 +423,8 @@
 				A794C4F82B03B41D008A4338 /* RenderPipelineDescriptorLibrary.swift in Sources */,
 				A794C4F22B03A09F008A4338 /* Preferences.swift in Sources */,
 				A794C5012B03FBC8008A4338 /* MeshLibrary.swift in Sources */,
+				A7BD27582B0594DF0032AD80 /* Ball.swift in Sources */,
+				A7BD27562B056E7F0032AD80 /* Mouse.swift in Sources */,
 				A794C4F42B03A4D7008A4338 /* ShaderLibrary.swift in Sources */,
 				A794C4FF2B03CF15008A4338 /* Renderer.swift in Sources */,
 				A794C4F02B039CDA008A4338 /* Engine.swift in Sources */,

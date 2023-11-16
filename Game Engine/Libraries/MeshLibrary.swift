@@ -9,6 +9,7 @@ import MetalKit
 
 enum MeshTypes {
     case TriangleCustom
+    case HighTriangleCustom
     case QuadCustom
 }
 
@@ -22,6 +23,7 @@ class MeshLibrary {
     
     private static func createDefaultMeshes() {
         meshes.updateValue(TriangleCustomMesh(), forKey: .TriangleCustom)
+        meshes.updateValue(HighTriangleCustomMesh(), forKey: .HighTriangleCustom)
         meshes.updateValue(QuadCustomMesh(), forKey: .QuadCustom)
     }
     
@@ -60,6 +62,16 @@ class TriangleCustomMesh: CustomMesh {
             Vertex(position: SIMD3<Float>( 0,  1, 0), color: SIMD4<Float>(1, 0, 0, 1)), // Top
             Vertex(position: SIMD3<Float>(-1, -1, 0), color: SIMD4<Float>(0, 1, 0, 1)), // Bottom left
             Vertex(position: SIMD3<Float>( 1, -1, 0), color: SIMD4<Float>(0, 0, 1, 1)), // Bottom right
+        ]
+    }
+}
+
+class HighTriangleCustomMesh: CustomMesh {
+    override func createVertices() -> [Vertex] {
+        [
+            Vertex(position: SIMD3<Float>(   0,  1, 0), color: SIMD4<Float>(1, 0, 0, 1)), // Top
+            Vertex(position: SIMD3<Float>(-0.5, -1, 0), color: SIMD4<Float>(0, 1, 0, 1)), // Bottom left
+            Vertex(position: SIMD3<Float>( 0.5, -1, 0), color: SIMD4<Float>(0, 0, 1, 1)), // Bottom right
         ]
     }
 }

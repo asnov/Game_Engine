@@ -10,11 +10,18 @@ import MetalKit
 class SandboxScene: Scene {
     
     override func buildScene() {
-        for x in -2..<2 {
-            for y in -2..<2 {
+        let ball = Ball()
+        ball.position.x = 0
+        ball.position.y = 0
+        ball.scale = SIMD3<Float>(repeating: 0.1)
+        addChild(ball)
+
+        let count: Int = 2
+        for x in -count..<count {
+            for y in -count..<count {
                 let player = Player()
-                player.position.x = (Float(x) + 0.5) / 2
-                player.position.y = (Float(y) + 0.5) / 2
+                player.position.x = (Float(x) + 0.5) / Float(count)
+                player.position.y = (Float(y) + 0.5) / Float(count)
                 player.scale = SIMD3<Float>(repeating: 0.1)
                 addChild(player)
             }
@@ -23,11 +30,19 @@ class SandboxScene: Scene {
     
     // This could be done on the object level
     override func update(deltaTime: Float) {
+//        print(Mouse.GetMouseWindowPosition())
+//        print(Mouse.GetMouseViewportPosition())
         for child in self.children {
             child.rotation.z += 0.001
         }
         let child = children[0]
-        child.rotation.z += 0.01
+        
+        if(Mouse.IsMouseButtonPressed(button: .left)) {
+            child.rotation.z += 0.02
+        }
+        if(Mouse.IsMouseButtonPressed(button: .right)) {
+            child.rotation.z -= 0.02
+        }
         
         if(Keyboard.isKeyPressed(.rightArrow)) {
             child.position.x += deltaTime

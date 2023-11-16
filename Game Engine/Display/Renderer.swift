@@ -8,12 +8,23 @@
 import MetalKit
 
 class Renderer: NSObject {
+    public static var ScreenSize = SIMD2<Float>(repeating: 0.0)
     
+    init(_ view: MTKView) {
+        super.init()
+        updateScreenSize(view)
+    }
 }
 
 extension Renderer: MTKViewDelegate {
+    
+    func updateScreenSize(_ view: MTKView) {
+        Renderer.ScreenSize = SIMD2<Float>(Float(view.bounds.width), Float(view.bounds.height))
+    }
+
     func mtkView(_ view: MTKView, drawableSizeWillChange size: CGSize) {
         // When the window is resized
+        updateScreenSize(view)
     }
     
     func draw(in view: MTKView) {
@@ -33,5 +44,4 @@ extension Renderer: MTKViewDelegate {
         commandBuffer.present(drawable)
         commandBuffer.commit()
     }
-    
 }
