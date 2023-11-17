@@ -24,5 +24,5 @@ class Preferences {
     
     public static var MainDepthPixelFormat: MTLPixelFormat = MTLPixelFormat.depth32Float
     
-    public static var StartingSceneType: SceneTypes = SceneTypes.Sandbox3D
+    public static var StartingSceneType: SceneTypes = SceneTypes.ManyCubes
 }

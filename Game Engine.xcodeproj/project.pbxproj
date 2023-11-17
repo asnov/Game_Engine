@@ -20,6 +20,7 @@
 		A753D01F2B0546E90067B6B3 /* SandboxScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = A753D01E2B0546E90067B6B3 /* SandboxScene.swift */; };
 		A753D0222B0549740067B6B3 /* SceneManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A753D0212B0549740067B6B3 /* SceneManager.swift */; };
 		A7587AAD2B06B5B4008CA9DF /* ColorUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7587AAC2B06B5B4008CA9DF /* ColorUtil.swift */; };
+		A7587AAF2B070A6C008CA9DF /* ManyCubesScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7587AAE2B070A6C008CA9DF /* ManyCubesScene.swift */; };
 		A794C4EA2B02D594008A4338 /* Types.swift in Sources */ = {isa = PBXBuildFile; fileRef = A794C4E92B02D594008A4338 /* Types.swift */; };
 		A794C4F02B039CDA008A4338 /* Engine.swift in Sources */ = {isa = PBXBuildFile; fileRef = A794C4EF2B039CDA008A4338 /* Engine.swift */; };
 		A794C4F22B03A09F008A4338 /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = A794C4F12B03A09F008A4338 /* Preferences.swift */; };
@@ -81,6 +82,7 @@
 		A753D01E2B0546E90067B6B3 /* SandboxScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SandboxScene.swift; sourceTree = "<group>"; };
 		A753D0212B0549740067B6B3 /* SceneManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneManager.swift; sourceTree = "<group>"; };
 		A7587AAC2B06B5B4008CA9DF /* ColorUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorUtil.swift; sourceTree = "<group>"; };
+		A7587AAE2B070A6C008CA9DF /* ManyCubesScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManyCubesScene.swift; sourceTree = "<group>"; };
 		A794C4E92B02D594008A4338 /* Types.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Types.swift; sourceTree = "<group>"; };
 		A794C4EF2B039CDA008A4338 /* Engine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Engine.swift; sourceTree = "<group>"; };
 		A794C4F12B03A09F008A4338 /* Preferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preferences.swift; sourceTree = "<group>"; };
@@ -202,6 +204,7 @@
 				A753D01C2B0545080067B6B3 /* Scene.swift */,
 				A753D01E2B0546E90067B6B3 /* SandboxScene.swift */,
 				A7BD27622B0679710032AD80 /* SandboxScene3D.swift */,
+				A7587AAE2B070A6C008CA9DF /* ManyCubesScene.swift */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -479,6 +482,7 @@
 				A794C4FD2B03CB40008A4338 /* GameObject.swift in Sources */,
 				A794C5052B0408A6008A4338 /* Node.swift in Sources */,
 				A794C4EA2B02D594008A4338 /* Types.swift in Sources */,
+				A7587AAF2B070A6C008CA9DF /* ManyCubesScene.swift in Sources */,
 				A7BD275F2B0653100032AD80 /* CameraManager.swift in Sources */,
 				A7BD27542B0567B60032AD80 /* Keycodes.swift in Sources */,
 				A708A6422B0276B500F4BCAF /* Game_Engine.xcdatamodeld in Sources */,

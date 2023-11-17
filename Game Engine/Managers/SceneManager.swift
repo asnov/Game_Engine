@@ -10,6 +10,7 @@ import MetalKit
 enum SceneTypes {
     case Sandbox
     case Sandbox3D
+    case ManyCubes
 }
 
 class SceneManager {
@@ -26,6 +27,8 @@ class SceneManager {
             _currentScene = SandboxScene()
         case .Sandbox3D:
             _currentScene = SandboxScene3D()
+        case .ManyCubes:
+            _currentScene = ManyCubesScene()
         }
     }
     
